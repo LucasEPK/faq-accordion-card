@@ -1,0 +1,96 @@
+body{
+    /*Here we make everything centered*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    height: 100vh; /*Makes body page size*/
+    /*Create background gradient*/
+    background-color: hsl(240, 73%, 65%); /*for browsers that don't support gradients*/
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /*font used*/
+    font-family: 'Kumbh Sans';
+}
+
+.question_txt{
+    font-weight: 400;
+    color: hsl(237, 12%, 33%);
+    font-size: 17px;
+
+    margin: 0;
+
+    background-color: transparent;
+    cursor: pointer;
+    padding: 18px 0;
+    width: 100%;
+    text-align: left;
+
+    /*erases default border and puts a border at the bottom*/
+    border: 0;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+
+    outline: none;
+    transition: 0.4s; /*makes text change to hover settings but with a transition*/
+}
+
+.active, .question_txt:hover{/*active is for js*/
+    color: hsl(14, 88%, 65%);
+}
+
+.question_txt:after{ /*after inserts something after the content of the selected element*/
+    content: url(images/icon-arrow-down.svg);
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after{
+    /*flips arrow and makes it upside down after being pressed*/
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+.answer_txt{
+    font-weight: 400;
+    color: hsl(240, 6%, 50%);
+    font-size: 17px;
+
+    margin: 0;
+
+    padding: 0 18px;
+    background-color: transparent;
+    display: none;
+    overflow: hidden;
+}
+
+#flex_container{
+    /*size and color adjustments*/
+    width: 1000px;
+    height: 520px;
+    margin: 30px 60px;
+    border-radius: 25px;
+    /*adds background image and adjusts size*/
+    background-color: white;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    /*centers the contents vertically in the container*/
+    display: flex;
+    align-items: center;
+}
+
+#item1{
+    min-width: 500px;
+    height: 70%; /*this makes image work with align-items: center*/
+    background-image: url(images/illustration-woman-online-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#item2{
+    margin: 0 40px;
+}
