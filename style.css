@@ -19,7 +19,7 @@ body{
 .question_txt{
     font-weight: 400;
     color: hsl(237, 12%, 33%);
-    font-size: 17px;
+    font-size: 15px;
 
     margin: 0;
 
@@ -37,8 +37,12 @@ body{
     transition: 0.4s; /*makes text change to hover settings but with a transition*/
 }
 
-.active, .question_txt:hover{/*active is for js*/
+.question_txt:hover{
     color: hsl(14, 88%, 65%);
+}
+
+.active {/*this is activated by js*/
+    font-weight: 700;
 }
 
 .question_txt:after{ /*after inserts something after the content of the selected element*/
@@ -56,12 +60,12 @@ body{
 .answer_txt{
     font-weight: 400;
     color: hsl(240, 6%, 50%);
-    font-size: 17px;
+    font-size: 12px;
 
     margin: 0;
 
-    padding: 0 18px;
     background-color: transparent;
+    /*this hides the text*/
     display: none;
     overflow: hidden;
 }
@@ -92,5 +96,5 @@ body{
 }
 
 #item2{
-    margin: 0 40px;
+    margin: 0 60px;
 }
