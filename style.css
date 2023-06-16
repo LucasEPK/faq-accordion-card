@@ -16,6 +16,10 @@ body{
     font-family: 'Kumbh Sans';
 }
 
+h1{
+    color: hsl(238, 29%, 16%);
+}
+
 .question_txt{
     font-weight: 400;
     color: hsl(237, 12%, 33%);
@@ -33,8 +37,7 @@ body{
     border: 0;
     border-bottom: 1px solid hsl(240, 5%, 91%);
 
-    outline: none;
-    transition: 0.4s; /*makes text change to hover settings but with a transition*/
+    outline: none;/*idk if this is useful but it's here because i don't wanna break anything*/
 }
 
 .question_txt:hover{
@@ -42,7 +45,9 @@ body{
 }
 
 .active {/*this is activated by js*/
-    font-weight: 700;
+    color:hsl(238, 29%, 16%);
+    font-weight: 600;
+    font-size: 14px; /*Fonts goes smaller to match preview image size*/
 }
 
 .question_txt:after{ /*after inserts something after the content of the selected element*/
@@ -72,15 +77,17 @@ body{
 
 #flex_container{
     /*size and color adjustments*/
-    width: 1000px;
+    width: 920px;
     height: 520px;
     margin: 30px 60px;
     border-radius: 25px;
     /*adds background image and adjusts size*/
     background-color: white;
     background-image: url(images/bg-pattern-desktop.svg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    /*makes background off center*/
+    background-position: -530px -250px;
 
     /*centers the contents vertically in the container*/
     display: flex;
@@ -88,13 +95,43 @@ body{
 }
 
 #item1{
-    min-width: 500px;
+    min-width: 400px;
     height: 70%; /*this makes image work with align-items: center*/
+}
+
+#girl_screen{
+    height: 100%;
+    width: 100%;
     background-image: url(images/illustration-woman-online-desktop.svg);
-    background-size: contain;
+    background-size: 470px;
     background-repeat: no-repeat;
+    background-position: -80px;
+
+    display: flex;
+    align-items: center;
+}
+
+#girl_screen img{
+    margin: 95px 0 0 -93px;
 }
 
 #item2{
-    margin: 0 60px;
+    margin: 0 100px 0 80px;
+}
+
+@media(max-width: 800px) { /*Mobile design*/
+    #flex_container{
+        /*changes background image to mobile version*/
+        background-image: url(images/bg-pattern-mobile.svg);
+        flex-direction: column;
+        margin: 200px 60px 0 60px;
+    }
+    #girl_screen{
+        background-image: none;
+    }
+    #girl_screen img{
+        content: url(images/illustration-woman-online-mobile.svg);
+        margin: -180px 0 0 0;
+
+    }
 }
