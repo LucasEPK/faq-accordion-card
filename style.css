@@ -13,7 +13,7 @@ body{
     background-repeat: no-repeat;
 
     /*font used*/
-    font-family: 'Kumbh Sans';
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 h1{
@@ -46,7 +46,7 @@ h1{
 
 .active {/*this is activated by js*/
     color:hsl(238, 29%, 16%);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px; /*Fonts goes smaller to match preview image size*/
 }
 
@@ -102,36 +102,74 @@ h1{
 #girl_screen{
     height: 100%;
     width: 100%;
+    /*i made the woman online img as background so I can put the box img on top and also to make it clip*/
     background-image: url(images/illustration-woman-online-desktop.svg);
     background-size: 470px;
     background-repeat: no-repeat;
+    /*clips the image because it goes outside*/
     background-position: -80px;
-
+    /*this kinda centers the box*/
     display: flex;
     align-items: center;
 }
 
-#girl_screen img{
+#girl_screen img{/*this is the box and the margin is negative so it goes outside*/
     margin: 95px 0 0 -93px;
 }
 
-#item2{
+#item2{/*text margin*/
     margin: 0 100px 0 80px;
 }
 
 @media(max-width: 800px) { /*Mobile design*/
-    #flex_container{
-        /*changes background image to mobile version*/
-        background-image: url(images/bg-pattern-mobile.svg);
-        flex-direction: column;
-        margin: 200px 60px 0 60px;
-    }
-    #girl_screen{
-        background-image: none;
-    }
-    #girl_screen img{
-        content: url(images/illustration-woman-online-mobile.svg);
-        margin: -180px 0 0 0;
 
+    .question_txt{
+        font-size: 14px;
+    }
+
+    .active{
+        font-size: 13px;
+    }
+
+    #flex_container{
+        /*makes items stack on top of eachother*/
+        flex-direction: column;
+        /*changes size to fit new screen size*/
+        min-width: 200px;
+        min-height: 550px;
+        /*changes background image to mobile version and fixes it for new screensize*/
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-size: 250px;
+        background-position: 40px 0;
+        margin: 50px 25px 0 25px;
+    }
+    
+    #girl_screen{ /*deletes woman online background img because we are gonna make it an actual img in the html*/
+        background-image: none;
+        background-size: 0px;
+
+        /*resets heights and widths*/
+        height: auto;
+        width: auto;
+    }
+
+    #girl_screen img{ /*changes box image to woman online mobile image*/
+        width: 250px;
+        height: auto;
+        content: url(images/illustration-woman-online-mobile.svg);
+        margin: -115px 0 0 0;/*puts image above and overflowing*/
+    }
+
+    #item1{
+        min-width: 100px;
+        height: 110px; /*this makes FAQ go up because the div occupies less space than the image and the image is overlapping outside*/
+    }
+
+    #item2{
+        margin: 0 20px 0 20px;
+    }
+
+    #item2 h1{
+        text-align: center;
     }
 }
